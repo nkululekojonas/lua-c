@@ -1,13 +1,21 @@
-#include <lua.h>
-#include <lauxlib.h>
-#include <lualib.h> 
+#include <iostream>
+#include <sstream>
 
-#include <stdlib.h>                            
-#include <stdio.h>  
+# include <lua.hpp>
+
+extern "C" {
+#include "lua.h"
+#include "luaconf.h"
+#include "lualib.h"
+#include "lauxlib.h"
+}
 
 int main(int argc, char **argv) {
 
-    // Create a lua state variable
+    // new Lua state
+    std::cout << "[C++] Starting Lua state" << std::endl;
+//    lua_State *lua_state = luaL_newstate();
+
     lua_State *L;
     L = luaL_newstate();
 
